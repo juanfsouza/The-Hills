@@ -8,7 +8,7 @@
 }
 
 body {
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background: radial-gradient(circle, rgba(0,10,40,1) 0%, rgba(0,12,48,1) 23%, rgba(1,13,47,1) 100%);
 }
 
 /* 🔵 Fundo principal */

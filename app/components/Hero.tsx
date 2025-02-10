@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion"; 
-import { TextAnimate } from "@/app/components/ui/TextAnimate"; 
+import { TextAnimate } from "@/app/components/ui/TextAnimate";
+import Header from "./NavBar";
 
 const Hero = () => {
   const [shootingStars, setShootingStars] = useState<number[]>([]);
@@ -12,7 +12,13 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-screen overflow-hidden bg-hero transition-all">
+    <section
+      className="relative h-screen overflow-hidden bg-[url('/hero.png')] bg-cover bg-center"
+    >
+      < Header />
+      {/* Overlay para melhorar o contraste */}
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
       {/* Camada de estrelas cadentes */}
       <div className="absolute inset-0 night">
         {shootingStars.map((star) => (
@@ -30,28 +36,26 @@ const Hero = () => {
       </div>
 
       {/* Conteúdo do Hero */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center transition-all text-white">
-        {/* Animação no título com o TextAnimate */}
-        <h1 className="text-6xl font-semibold transition-all">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
+        <h1 className="text-6xl font-semibold">
           <TextAnimate
-            animation="fadeIn" // Escolha o efeito de animação
-            duration={0.5} // Duração da animação
-            delay={0.2} // Delay antes de começar a animação
-            startOnView={true} // Iniciar a animação quando o elemento estiver na tela
+            animation="fadeIn"
+            duration={0.5}
+            delay={0.2}
+            startOnView={true}
           >
             CODE JF
           </TextAnimate>
         </h1>
 
-        {/* Texto adicional */}
         <p className="mt-4 text-2xl font-medium">
-        <TextAnimate
-            animation="scaleUp" // Escolha o efeito de animação
-            duration={2} // Duração da animação
-            delay={0.5} // Delay antes de começar a animação
-            startOnView={true} // Iniciar a animação quando o elemento estiver na tela
+          <TextAnimate
+            animation="scaleUp"
+            duration={2}
+            delay={0.5}
+            startOnView={true}
           >
-          Desenvolvedor Front-end | React | Next.js | UI/UX
+            Desenvolvedor Front-end | React | Next.js | UI/UX
           </TextAnimate>
         </p>
       </div>
