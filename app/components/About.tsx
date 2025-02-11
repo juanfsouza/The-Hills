@@ -7,7 +7,7 @@ const About = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   return (
-    <section className="relative flex flex-col items-center mt-32 text-white">
+    <section id="about" className="relative flex flex-col items-center mt-32 text-white">
       {/* 🔥 Canvas para os balões (somente no About) */}
       <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full pointer-events-none" />
 

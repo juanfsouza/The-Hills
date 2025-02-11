@@ -38,7 +38,7 @@ const aboutSections = [
 const Project = () => {
 
   return (
-    <section className="relative flex flex-col items-center mt-32 text-white">
+    <section className="relative flex flex-col items-center mt-32 text-white bg-[url('/bg-projects.png')] bg-cover bg-center">
       <div className="mt-16 grid grid-cols-1 gap-12 w-full max-w-7xl">
         {aboutSections.map((section, index) => (
           <div key={index} className={`flex ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"} items-center gap-8`}>

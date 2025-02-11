@@ -7,8 +7,18 @@
   font-family: var(--font-poppins), sans-serif;
 }
 
+@font-face { 
+  font-family: "remixicon";
+  src: url("/fonts/remixicon.woff2") format("woff2"),
+       url("/fonts/remixicon.woff") format("woff"),
+       url("/fonts/remixicon.ttf") format("truetype"),
+       url("/fonts/remixicon.svg#remixicon") format("svg");
+  font-display: swap;
+}
+
+
 body {
-  background: radial-gradient(circle, rgba(0,10,40,1) 0%, rgba(0,12,48,1) 23%, rgba(1,13,47,1) 100%);
+  background: linear-gradient(0deg, rgba(3,0,23,1) 8%, rgba(0,8,28,1) 82%)
 }
 
 /* 🔵 Fundo principal */
@@ -40,7 +50,6 @@ body {
   filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
   animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
 }
-
 
 .shooting_star::after {
   transform: translateX(50%) rotateZ(-45deg);
