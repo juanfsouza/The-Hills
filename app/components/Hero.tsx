@@ -24,22 +24,18 @@ const Hero = () => {
     }
   };
 
-  useEffect(() => {
-    setShootingStars(Array.from({ length: 20 }, (_, i) => i));
-  }, []);
-
   const text =
   "✦ UI/UX Design ✦ Graphic Design ✦ Motion Graphic ✦ Digital Marketing ✦ SEO ✦ Branding ✦ Website Design ✦ App Design ✦ Development ✦ ";
 
 
   return (
-    <section className="relative h-screen overflow-hidden bg-[url('/hero-bg.png')] bg-cover bg-center">
+    <section id="home" className="relative h-screen overflow-hidden bg-[url('/hero-bg.png')] bg-cover bg-center">
       <Header />
         {/* 🔥 Imagem animada flutuando lateralmente */}
         <motion.img
           src="/hero-3d-02.png"
           alt="Mask"
-          className="mt-64 w-400 h-400 object-contain absolute right-36 md:right-48 transition-all"
+          className="mt-64 hidden md:block w-[200px] h-[200px] object-contain absolute right-36 md:right-48 transition-all"
           animate={{
             x: [-20, 20, -20],
             y: [-0, 20, -20],
@@ -72,7 +68,7 @@ const Hero = () => {
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white transition-all">
         <h1 className="text-6xl font-remix font-semibold">
           <TextAnimate animation="fadeIn" duration={0.5} delay={0.2} startOnView={true}>
-            CODE JF
+            Criando Criatividade
           </TextAnimate>
         </h1>
 
@@ -86,15 +82,15 @@ const Hero = () => {
             Sou um desenvolvedor apaixonado por criar interfaces interativas e responsivas.
           </TextAnimate>
         </p>
-
-          <Image src="/vector-arrow.png" alt="Arrow" width={200} height={200} className="rounded-lg shadow-lg md-10 m-3" />
-          <InteractiveHoverButton>Hover Me</InteractiveHoverButton>
-
+          <div className="flex mt-3">
+            <Image src="/vector-arrow.png" className="hidden md:block rounded-lg shadow-lg md-10 m-3" alt="Arrow" width={200} height={200} />
+            <InteractiveHoverButton>Meus Projetos</InteractiveHoverButton>
+          </div>           
         {/* 🔥 Imagem animada flutuando lateralmente */}
         <motion.img
           src="/hero-3d-01.png"
           alt="Planet"
-          className="mt-14 w-400 h-400 object-contain absolute left-10 md:left-34 transition-all"
+          className="mt-14 hidden md:block w-[600px] h-[600px] object-contain absolute left-10 md:left-34 transition-all"
           animate={{
             x: [-20, 20, -20],
             y: [ 20, 20, -20],
