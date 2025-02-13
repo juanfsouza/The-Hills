@@ -24,12 +24,20 @@ const Hero = () => {
     }
   };
 
+  // 🔥 Scroll suave para a seção "Projects"
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById("projects");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const text =
   "✦ UI/UX Design ✦ Graphic Design ✦ Motion Graphic ✦ Digital Marketing ✦ SEO ✦ Branding ✦ Website Design ✦ App Design ✦ Development ✦ ";
 
 
   return (
-    <section id="home" className="relative h-screen overflow-hidden bg-[url('/hero-bg.png')] bg-cover bg-center">
+    <section id="home" className="relative h-screen overflow-hidden bg-[url('/hero-bg.png')] bg-cover bg-center ">
       <Header />
         {/* 🔥 Imagem animada flutuando lateralmente */}
         <motion.img
@@ -68,7 +76,7 @@ const Hero = () => {
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white transition-all">
         <h1 className="text-6xl font-remix font-semibold">
           <TextAnimate animation="fadeIn" duration={0.5} delay={0.2} startOnView={true}>
-            Criando Criatividade
+            Criatividade é Arte
           </TextAnimate>
         </h1>
 
@@ -84,7 +92,7 @@ const Hero = () => {
         </p>
           <div className="flex mt-3">
             <Image src="/vector-arrow.png" className="hidden md:block rounded-lg shadow-lg md-10 m-3" alt="Arrow" width={200} height={200} />
-            <InteractiveHoverButton>Meus Projetos</InteractiveHoverButton>
+            <InteractiveHoverButton onClick={scrollToProjects} >Meus Projetos</InteractiveHoverButton>
           </div>           
         {/* 🔥 Imagem animada flutuando lateralmente */}
         <motion.img

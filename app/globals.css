@@ -2,23 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Fonte personalizada */
-.font-sans {
-  font-family: var(--font-poppins), sans-serif;
-}
-
-@font-face { 
-  font-family: "remixicon";
-  src: url("/fonts/remixicon.woff2") format("woff2"),
-       url("/fonts/remixicon.woff") format("woff"),
-       url("/fonts/remixicon.ttf") format("truetype"),
-       url("/fonts/remixicon.svg#remixicon") format("svg");
-  font-display: swap;
-}
-
 
 body {
-  background: linear-gradient(0deg, rgba(20,20,20,1) 8%, rgba(19,19,19,1) 82%);
+  background: #141414;
 }
 
 /* 🔵 Fundo principal */

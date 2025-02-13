@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { ShimmerButton } from "./ui/shimmer-button";
 
@@ -39,8 +38,9 @@ export default function Header() {
       } ${isAtTop ? "bg-transparent" : "bg-zinc-950/20 backdrop-blur-sm"}`}
     >
       <div className="container mx-auto flex justify-between items-center p-4 md:p-6">
-        <h1 className="text-2xl md:text-3xl font-bold text-yellow-400">CodeJF</h1>
-
+        <h1 className="hidden md:block text-2xl md:text-3xl font-bold text-yellow-400">
+          CodeJF
+        </h1>
         {/* Ícone do Menu Mobile */}
         <button
           className="md:hidden text-white text-2xl"
@@ -71,15 +71,21 @@ export default function Header() {
               <span className="absolute bottom-0 left-0 h-1 w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
             </li>
             <li className="group relative">
-              <Link href="/projetos" className="text-slate-300 hover:text-white transition-all">
+              <button
+                onClick={() => scrollToSection("projects")}
+                className="text-slate-300 hover:text-white transition-all"
+              >
                 Projetos
-              </Link>
+              </button>
               <span className="absolute bottom-0 left-0 h-1 w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
             </li>
             <li className="group relative">
-              <Link href="/contato" className="text-slate-300 hover:text-white transition-all">
+              <button
+                onClick={() => scrollToSection("contacts")}
+                className="text-slate-300 hover:text-white transition-all"
+              >
                 Contato
-              </Link>
+              </button>
               <span className="absolute bottom-0 left-0 h-1 w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
             </li>
           </ul>
@@ -113,14 +119,14 @@ export default function Header() {
             </button>
           </li>
           <li>
-            <Link href="/projetos" className="hover:text-yellow-400" onClick={() => setMenuOpen(false)}>
+            <button onClick={() => scrollToSection("projects")} className="text-slate-300 hover:text-white transition-all">
               Projetos
-            </Link>
+            </button>
           </li>
           <li>
-            <Link href="/contato" className="hover:text-yellow-400" onClick={() => setMenuOpen(false)}>
-              Contato
-            </Link>
+            <button onClick={() => scrollToSection("contacts")} className="text-slate-300 hover:text-white transition-all">
+              Contatos
+            </button>
           </li>
         </ul>
       </div>
