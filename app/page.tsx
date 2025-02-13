@@ -1,6 +1,5 @@
 "use client";
 import { ParallaxProvider } from "react-scroll-parallax";
-import { useEffect, useState } from "react";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Footer from "./components/Footer";
